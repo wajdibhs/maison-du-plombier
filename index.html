@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plombex — L'excellence à votre service | Plombier Urgence Paris 24h/7j</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0a1628;
+    --navy-mid: #122040;
+    --blue: #1a4fa0;
+    --blue-light: #2563d4;
+    --gold: #e8a923;
+    --gold-light: #f5c549;
+    --cream: #faf8f3;
+    --white: #ffffff;
+    --gray: #6b7280;
+    --light-gray: #f1f0eb;
+    --red-urgent: #c0392b;
+    --text-dark: #0f1923;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+    background: var(--navy);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 5%;
+    height: 70px;
+    border-bottom: 2px solid var(--gold);
+  }
+
+  .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.35rem;
+    font-weight: 900;
+    color: var(--white);
+    letter-spacing: -0.01em;
+  }
+  .logo span { color: var(--gold); }
+
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+
+  .nav-cta {
+    background: var(--gold);
+    color: var(--navy) !important;
+    padding: 0.55rem 1.25rem;
+    border-radius: 4px;
+    font-weight: 600 !important;
+    color: var(--navy);
+    transition: background 0.2s, transform 0.1s !important;
+  }
+  .nav-cta:hover { background: var(--gold-light) !important; transform: translateY(-1px); }
+
+  /* ─── URGENCY BAR ─── */
+  .urgency-bar {
+    position: fixed; top: 70px; left: 0; right: 0; z-index: 998;
+    background: var(--red-urgent);
+    color: white;
+    text-align: center;
+    padding: 0.5rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    animation: pulse-bar 3s ease-in-out infinite;
+  }
+  @keyframes pulse-bar {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.85; }
+  }
+  .urgency-bar a { color: white; text-decoration: underline; }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    background: var(--navy);
+    background-image:
+      radial-gradient(ellipse at 70% 50%, rgba(26,79,160,0.35) 0%, transparent 60%),
+      url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 160px 5% 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold) 100%);
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(232,169,35,0.15);
+    border: 1px solid rgba(232,169,35,0.4);
+    color: var(--gold);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.4rem 1rem;
+    border-radius: 100px;
+    margin-bottom: 1.8rem;
+    width: fit-content;
+    animation: fadeInUp 0.6s ease both;
+  }
+  .hero-badge .dot {
+    width: 6px; height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+    animation: blink 1.2s ease infinite;
+  }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 6vw, 5.5rem);
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1.05;
+    max-width: 780px;
+    margin-bottom: 0.5rem;
+    animation: fadeInUp 0.7s 0.1s ease both;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: var(--gold);
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: rgba(255,255,255,0.65);
+    max-width: 560px;
+    line-height: 1.65;
+    margin: 1.2rem 0 2.5rem;
+    font-weight: 300;
+    animation: fadeInUp 0.7s 0.2s ease both;
+  }
+
+  .hero-actions {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+    animation: fadeInUp 0.7s 0.3s ease both;
+  }
+
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--gold);
+    color: var(--navy);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    border: none; cursor: pointer;
+    transition: transform 0.15s, background 0.2s;
+    letter-spacing: -0.01em;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+  .btn-outline {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: transparent;
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    border: 1.5px solid rgba(255,255,255,0.3);
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+  .hero-stats {
+    display: flex; gap: 3rem; flex-wrap: wrap;
+    margin-top: 4rem; padding-top: 2.5rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    animation: fadeInUp 0.7s 0.4s ease both;
+  }
+  .stat-item { }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.5);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-top: 0.3rem;
+  }
+
+  /* ─── PIPE DECORATION ─── */
+  .hero-deco {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.07;
+    pointer-events: none;
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ─── SECTION BASE ─── */
+  section { padding: 6rem 5%; }
+
+  .section-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.8rem;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--navy);
+    margin-bottom: 1rem;
+  }
+  .section-desc {
+    font-size: 1.05rem;
+    color: var(--gray);
+    line-height: 1.7;
+    max-width: 560px;
+  }
+
+  /* ─── URGENCE STRIP ─── */
+  .urgence-strip {
+    background: var(--navy);
+    padding: 2.5rem 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+    border-top: 4px solid var(--gold);
+    border-bottom: 4px solid var(--gold);
+  }
+  .urgence-strip .text { color: white; }
+  .urgence-strip h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+  }
+  .urgence-strip p { color: rgba(255,255,255,0.6); font-size: 0.95rem; }
+
+  .phone-display {
+    display: flex; align-items: center; gap: 1rem;
+    text-decoration: none;
+  }
+  .phone-icon {
+    width: 56px; height: 56px;
+    background: var(--gold);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    animation: ring 2s ease-in-out infinite;
+  }
+  @keyframes ring {
+    0%,100%{transform:rotate(0)} 10%{transform:rotate(-15deg)} 20%{transform:rotate(15deg)}
+    30%{transform:rotate(-10deg)} 40%{transform:rotate(10deg)} 50%{transform:rotate(0)}
+  }
+  .phone-icon svg { width: 26px; height: 26px; fill: var(--navy); }
+  .phone-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: -0.02em;
+  }
+  .phone-sub { color: rgba(255,255,255,0.5); font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; }
+
+  /* ─── SERVICES ─── */
+  .services { background: var(--cream); }
+  .services-header {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    margin-bottom: 3.5rem; flex-wrap: wrap; gap: 1.5rem;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5px;
+    background: rgba(10,22,40,0.12);
+    border: 1.5px solid rgba(10,22,40,0.12);
+  }
+
+  .service-card {
+    background: var(--white);
+    padding: 2.5rem 2rem;
+    transition: background 0.25s;
+    position: relative;
+    overflow: hidden;
+    cursor: default;
+  }
+  .service-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    height: 3px; width: 0;
+    background: var(--gold);
+    transition: width 0.3s ease;
+  }
+  .service-card:hover { background: var(--navy); }
+  .service-card:hover::before { width: 100%; }
+  .service-card:hover .service-icon { background: rgba(232,169,35,0.15); border-color: rgba(232,169,35,0.3); }
+  .service-card:hover .service-icon svg { fill: var(--gold); }
+  .service-card:hover .service-name { color: var(--white); }
+  .service-card:hover .service-desc { color: rgba(255,255,255,0.55); }
+  .service-card:hover .service-badge { background: rgba(232,169,35,0.15); color: var(--gold); }
+
+  .service-icon {
+    width: 52px; height: 52px;
+    background: var(--light-gray);
+    border: 1.5px solid rgba(10,22,40,0.08);
+    border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1.5rem;
+    transition: all 0.25s;
+  }
+  .service-icon svg { width: 26px; height: 26px; fill: var(--navy); transition: fill 0.25s; }
+
+  .service-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 0.7rem;
+    transition: color 0.25s;
+  }
+  .service-desc {
+    font-size: 0.9rem;
+    color: var(--gray);
+    line-height: 1.65;
+    transition: color 0.25s;
+    margin-bottom: 1.2rem;
+  }
+  .service-badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.7rem;
+    background: var(--light-gray);
+    color: var(--navy);
+    border-radius: 3px;
+    transition: all 0.25s;
+  }
+
+  /* ─── WHY US ─── */
+  .why-us { background: var(--navy); }
+  .why-us .section-title { color: var(--white); }
+  .why-us .section-label { }
+  .why-us .section-desc { color: rgba(255,255,255,0.55); }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 2px;
+    margin-top: 3.5rem;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .why-card {
+    background: var(--navy-mid);
+    padding: 2.5rem 2rem;
+    border-left: 3px solid transparent;
+    transition: border-color 0.2s;
+  }
+  .why-card:hover { border-left-color: var(--gold); }
+  .why-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 900;
+    color: rgba(232,169,35,0.2);
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+  .why-title {
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+  }
+  .why-text { font-size: 0.88rem; color: rgba(255,255,255,0.45); line-height: 1.65; }
+
+  /* ─── PROCESS ─── */
+  .process { background: var(--cream); }
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 0;
+    margin-top: 3.5rem;
+    position: relative;
+  }
+  .process-step {
+    padding: 2rem;
+    position: relative;
+  }
+  .step-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    font-weight: 900;
+    color: rgba(10,22,40,0.07);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+  .step-title {
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--navy);
+    margin-bottom: 0.5rem;
+  }
+  .step-text { font-size: 0.88rem; color: var(--gray); line-height: 1.6; }
+  .step-arrow {
+    position: absolute;
+    top: 2.5rem; right: -12px;
+    color: var(--gold);
+    font-size: 1.5rem;
+    z-index: 1;
+  }
+
+  /* ─── TESTIMONIALS ─── */
+  .testimonials { background: var(--white); }
+  .testi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  .testi-card {
+    border: 1.5px solid rgba(10,22,40,0.1);
+    border-radius: 4px;
+    padding: 2rem;
+    position: relative;
+  }
+  .testi-card::before {
+    content: '"';
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    color: var(--gold);
+    opacity: 0.25;
+    position: absolute;
+    top: -0.5rem; left: 1.2rem;
+    line-height: 1;
+  }
+  .testi-text {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--gray);
+    margin-bottom: 1.5rem;
+    padding-top: 1.5rem;
+  }
+  .testi-author { display: flex; align-items: center; gap: 0.8rem; }
+  .testi-avatar {
+    width: 38px; height: 38px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 0.8rem;
+    background: var(--navy);
+    color: var(--gold);
+    flex-shrink: 0;
+  }
+  .testi-name { font-weight: 600; font-size: 0.9rem; color: var(--navy); }
+  .testi-loc { font-size: 0.78rem; color: var(--gray); }
+  .stars { color: var(--gold); font-size: 0.85rem; margin-bottom: 0.2rem; }
+
+  /* ─── ZONES ─── */
+  .zones { background: var(--light-gray); }
+  .zones-list {
+    display: flex; flex-wrap: wrap; gap: 0.6rem;
+    margin-top: 2rem;
+  }
+  .zone-pill {
+    background: var(--white);
+    border: 1px solid rgba(10,22,40,0.12);
+    color: var(--navy);
+    font-size: 0.82rem;
+    font-weight: 500;
+    padding: 0.4rem 1rem;
+    border-radius: 100px;
+    transition: all 0.2s;
+    cursor: default;
+  }
+  .zone-pill:hover { background: var(--navy); color: var(--gold); border-color: var(--navy); }
+
+  /* ─── DEVIS ─── */
+  .devis-section { background: var(--navy); }
+  .devis-inner {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .devis-inner .section-title { color: var(--white); }
+  .devis-inner .section-desc { color: rgba(255,255,255,0.55); margin: 0 auto 2.5rem; }
+  .devis-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    text-align: left;
+  }
+  .devis-form .full { grid-column: 1 / -1; }
+  .devis-form input,
+  .devis-form select,
+  .devis-form textarea {
+    width: 100%;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    padding: 0.85rem 1rem;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .devis-form input::placeholder,
+  .devis-form textarea::placeholder { color: rgba(255,255,255,0.3); }
+  .devis-form input:focus,
+  .devis-form select:focus,
+  .devis-form textarea:focus { border-color: var(--gold); }
+  .devis-form select option { background: var(--navy-mid); color: white; }
+  .devis-form textarea { resize: vertical; min-height: 100px; }
+  .devis-submit {
+    display: block; width: 100%;
+    background: var(--gold); color: var(--navy);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem; font-weight: 700;
+    padding: 1.1rem;
+    border: none; border-radius: 4px;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    letter-spacing: -0.01em;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .devis-submit:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+  .garanties {
+    display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;
+    margin-top: 2rem;
+  }
+  .garantie-item {
+    display: flex; align-items: center; gap: 0.5rem;
+    color: rgba(255,255,255,0.5);
+    font-size: 0.82rem;
+  }
+  .garantie-item svg { width: 16px; height: 16px; fill: var(--gold); flex-shrink: 0; }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: #060e1a;
+    color: rgba(255,255,255,0.4);
+    padding: 3rem 5%;
+  }
+  .footer-inner {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    flex-wrap: wrap; gap: 2rem;
+  }
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem; font-weight: 900;
+    color: white; margin-bottom: 0.5rem;
+  }
+  .footer-logo span { color: var(--gold); }
+  .footer-tagline { font-size: 0.82rem; }
+  .footer-col h4 {
+    color: white; font-size: 0.82rem;
+    font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; margin-bottom: 1rem;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 0.5rem; font-size: 0.85rem; }
+  .footer-col ul li a { color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
+  .footer-col ul li a:hover { color: var(--gold); }
+  .footer-bottom {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.07);
+    font-size: 0.78rem;
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;
+  }
+
+  /* ─── FLOATING PHONE ─── */
+  .float-phone {
+    position: fixed; bottom: 2rem; right: 2rem; z-index: 997;
+    display: flex; align-items: center; gap: 0.7rem;
+    background: var(--red-urgent);
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700; font-size: 0.95rem;
+    padding: 0.9rem 1.5rem;
+    border-radius: 100px;
+    text-decoration: none;
+    box-shadow: 0 4px 24px rgba(192,57,43,0.45);
+    transition: transform 0.2s;
+    animation: float-in 0.6s 1s both;
+  }
+  .float-phone:hover { transform: scale(1.04); }
+  .float-phone svg { width: 18px; height: 18px; fill: white; }
+  @keyframes float-in { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+
+  @media(max-width: 640px) {
+    nav { padding: 0 4%; }
+    .nav-links { display: none; }
+    .hero { padding: 150px 4% 60px; }
+    .hero-stats { gap: 1.5rem; }
+    .urgence-strip { flex-direction: column; text-align: center; }
+    .devis-form { grid-template-columns: 1fr; }
+    .devis-form .full { grid-column: 1; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">PLOMB<span>EX</span></div>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#process">Intervention</a></li>
+    <li><a href="#zones">Zones</a></li>
+    <li><a href="#devis" class="nav-cta">Devis gratuit</a></li>
+  </ul>
+</nav>
+
+<!-- URGENCY BAR -->
+<div class="urgency-bar">
+  🔴&nbsp; Urgence plomberie 24h/7j — Intervention en 30 min à Paris &nbsp;|&nbsp;
+  <a href="tel:0644044270">06 44 04 42 70</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-badge">
+    <span class="dot"></span>
+    Disponible 24h/7j — Paris &amp; Île-de-France
+  </div>
+  <h1>Plombier en <em>urgence</em><br>à Paris</h1>
+  <p class="hero-subtitle">
+    Fuite d'eau, robinet cassé, évacuation bouchée — nos plombiers professionnels avec plus de <strong style="color:rgba(255,255,255,0.85)">10 ans d'expérience</strong> interviennent en <strong style="color:rgba(255,255,255,0.85)">30 minutes</strong> en moyenne partout à Paris.
+  </p>
+  <div class="hero-actions">
+    <button onclick="document.getElementById('popup-tel').style.display='flex'" class="btn-primary" style="border:none;cursor:pointer;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+      Appeler maintenant
+    </button>
+    <a href="#devis" class="btn-outline">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 7V3.5L18.5 9H13z"/></svg>
+      Devis gratuit
+    </a>
+  </div>
+  <div class="hero-stats">
+    <div class="stat-item">
+      <div class="stat-num">30'</div>
+      <div class="stat-label">Délai d'intervention</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">24/7</div>
+      <div class="stat-label">Disponibilité</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">+10</div>
+      <div class="stat-label">Ans d'expérience</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">4.9★</div>
+      <div class="stat-label">Note clients</div>
+    </div>
+  </div>
+
+  <!-- Pipe SVG deco -->
+  <div class="hero-deco">
+    <svg width="280" height="380" viewBox="0 0 280 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="60" y="0" width="40" height="200" rx="4" fill="white"/>
+      <rect x="55" y="180" width="150" height="40" rx="4" fill="white"/>
+      <rect x="180" y="180" width="40" height="200" rx="4" fill="white"/>
+      <circle cx="80" cy="20" r="20" fill="white"/>
+      <circle cx="200" cy="360" r="20" fill="white"/>
+      <rect x="30" y="190" width="20" height="20" rx="2" fill="white" opacity="0.5"/>
+    </svg>
+  </div>
+</section>
+
+<!-- URGENCE STRIP -->
+<div class="urgence-strip">
+  <div class="text">
+    <h2>Urgence plomberie ? On arrive vite.</h2>
+    <p>Fuite d'eau, robinet cassé, canalisation bouchée — devis immédiat, déplacement express.</p>
+  </div>
+  <a href="tel:06 44 04 42 70" class="phone-display">
+    <div class="phone-icon">
+      <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+    </div>
+    <div>
+      <div class="phone-number">06 44 04 42 70</div>
+      <div class="phone-sub">24h/7j</div>
+    </div>
+  </a>
+</div>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="services-header">
+    <div>
+      <p class="section-label">Nos prestations</p>
+      <h2 class="section-title">Tous vos besoins<br>en plomberie & électricité</h2>
+    </div>
+    <p class="section-desc">Du dépannage d'urgence à l'installation complète, nos techniciens certifiés interviennent sur tous types de problèmes de plomberie et d'électricité.</p>
+  </div>
+
+  <div class="services-grid">
+
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
+      </div>
+      <div class="service-name">Fuite d'eau</div>
+      <div class="service-desc">Détection et réparation de toutes fuites : tuyaux, joints, robinets, compteurs. Diagnostic thermique disponible.</div>
+      <span class="service-badge">Urgence 24h/7j</span>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 0 0 8 20C19 20 22 3 22 3c-1 2-8 2-8 2-.5-2-1.5-4-1.5-4S15 7 17 8z"/></svg>
+      </div>
+      <div class="service-name">Débouchage</div>
+      <div class="service-desc">Débouchage WC, évier, baignoire, canalisations. Intervention au furet, haute pression ou pompe électrique.</div>
+      <span class="service-badge">Résultat garanti</span>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M17.5 13.5c0 2.49-2.01 4.5-4.5 4.5S8.5 15.99 8.5 13.5C8.5 9 13 4 13 4s4.5 5 4.5 9.5zM13 15a2 2 0 0 0 2-2 2 2 0 0 0-2-2 2 2 0 0 0-2 2 2 2 0 0 0 2 2z"/></svg>
+      </div>
+      <div class="service-name">Chauffe-eau</div>
+      <div class="service-desc">Installation, remplacement et dépannage chauffe-eau électrique, gaz, thermodynamique et solaire.</div>
+      <span class="service-badge">Toutes marques</span>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M5 3h14a2 2 0 0 1 2 2v4H3V5a2 2 0 0 1 2-2zm-2 8h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-8zm5 3v2h8v-2H8z"/></svg>
+      </div>
+      <div class="service-name">Installation sanitaire</div>
+      <div class="service-desc">Pose et raccordement de douche, baignoire, lavabo, WC, bidet. Rénovation complète de salle de bain.</div>
+      <span class="service-badge">Devis gratuit</span>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M7.5 21H2V9l5.5-6 5.5 6v12H7.5zm5.5 0v-6h4v6h-4zm0-8V9l5-4v16h-5V13z"/></svg>
+      </div>
+      <div class="service-name">Robinetterie</div>
+      <div class="service-desc">Remplacement de robinets, mitigeurs, thermostatiques. Réparation de joint, presse-étoupe, corps de robinet.</div>
+      <span class="service-badge">Rapide &amp; efficace</span>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M9.5 2v2.5l-3 3V11H5v2h1.5v1H5v2h1.5V22h11v-6H19v-2h-1.5v-1H19v-2h-1.5V7.5l-3-3V2h-5zm2.5 1.5h1v2h-1v-2zM9 8.5l3-3 3 3V11H9V8.5z"/></svg>
+      </div>
+      <div class="service-name">Canalisations</div>
+      <div class="service-desc">Inspection caméra, remplacement de canalisations vétustes, traçage de fuite, réparation de fissures.</div>
+      <span class="service-badge">Caméra incluse</span>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M11 7H9V5h2v2zm-2 8h2v-6H9v6zm5-8h-2v2h2V7zm-2 8h2v-6h-2v6zM2 3h20v2H2V3zM2 19h20v2H2v-2z"/></svg>
+      </div>
+      <div class="service-name">Chauffage central</div>
+      <div class="service-desc">Installation et entretien de radiateurs, purge, remplacement de vanne thermostatique, équilibrage du réseau.</div>
+      <span class="service-badge">Hiver comme été</span>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M20 4H4v2l8 5 8-5V4zM4 13h16v7H4v-7z"/></svg>
+      </div>
+      <div class="service-name">Fosse septique</div>
+      <div class="service-desc">Vidange, nettoyage, mise aux normes et installation de fosse septique toutes eaux et micro-station.</div>
+      <span class="service-badge">Agréé SPANC</span>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM12 17c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zM9 8V6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9z"/></svg>
+      </div>
+      <div class="service-name">Détection de fuite</div>
+      <div class="service-desc">Détection non destructive par thermographie infrarouge, gaz traceur et corrélation acoustique.</div>
+      <span class="service-badge">Sans démolition</span>
+    </div>
+<div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M17 12c0 2.76-2.24 5-5 5s-5-2.24-5-5c0-3.5 5-11 5-11s5 7.5 5 11zm-5 3c1.65 0 3-1.35 3-3 0-1.48-1.5-4.42-3-7.17C10.5 7.58 9 10.52 9 12c0 1.65 1.35 3 3 3zM3 18h18v2H3v-2z"/></svg>
+      </div>
+      <div class="service-name">Climatisation</div>
+      <div class="service-desc">Installation, entretien et dépannage de climatiseurs split, multi-split et systèmes réversibles. Toutes marques : Daikin, Mitsubishi, Atlantic.</div>
+      <span class="service-badge">Chaud &amp; Froid</span>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/><path d="M12 4c-1.5 0-2.9.4-4.1 1.1l1.4 1.4C10.1 6.2 11 6 12 6c3.31 0 6 2.69 6 6 0 1-.2 1.9-.5 2.7l1.4 1.4C19.6 14.9 20 13.5 20 12c0-4.42-3.58-8-8-8zm-6.9 2.9L3.7 8.3C3.26 9.4 3 10.67 3 12c0 4.42 3.58 8 8 8 1.33 0 2.6-.26 3.7-.7l-1.4-1.4C12.9 17.93 12.46 18 12 18c-3.31 0-6-2.69-6-6 0-.46.07-.9.1-1.3L4.7 9.3l.4-.4z"/></svg>
+      </div>
+      <div class="service-name">Ventilation (VMC)</div>
+      <div class="service-desc">Installation et entretien de VMC simple flux, double flux et hygroréglable. Nettoyage de gaines, remplacement de moteur et bouches d'aération.</div>
+      <span class="service-badge">Norme RT2020</span>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </div>
+      <div class="service-name">Chauffage</div>
+      <div class="service-desc">Installation et entretien de chaudières gaz, fioul, pompe à chaleur, plancher chauffant et radiateurs. Contrats de maintenance annuels disponibles.</div>
+      <span class="service-badge">Economies d'énergie</span>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg>
+      </div>
+      <div class="service-name">Électricité</div>
+      <div class="service-desc">Dépannage électrique, mise aux normes du tableau, pose de prises et interrupteurs, installation d'éclairage et de volets roulants.</div>
+      <span class="service-badge">Urgence 24h/7j</span>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M20 7H4c-1.1 0-2 .9-2 2v6c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2zm-8 7c-1.38 0-2.5-1.12-2.5-2.5S10.62 9 12 9s2.5 1.12 2.5 2.5S13.38 14 12 14zm-8-2H2v-1h2v1zm16 0h-2v-1h2v1z"/></svg>
+      </div>
+      <div class="service-name">Tableau électrique</div>
+      <div class="service-desc">Remplacement et mise aux normes de tableau électrique, disjoncteurs, différentiels. Mise en conformité NF C 15-100 pour location ou vente.</div>
+      <span class="service-badge">Normes NF C 15-100</span>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M13 3a9 9 0 0 0-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42A8.954 8.954 0 0 0 13 21a9 9 0 0 0 0-18zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z"/></svg>
+      </div>
+      <div class="service-name">Dépannage électrique</div>
+      <div class="service-desc">Panne de courant, court-circuit, prise qui ne fonctionne pas, câblage défectueux — diagnostic rapide et remise en service immédiate.</div>
+      <span class="service-badge">Intervention rapide</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why-us" id="pourquoi">
+  <p class="section-label">Pourquoi nous choisir</p>
+  <h2 class="section-title">L’Excellence Plomberie<br></h2>
+  <p class="section-desc">
+Des interventions rapides. Un travail impeccable. Votre partenaire de confiance pour tous vos besoins en plomberie..</p>
+
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-num">01</div>
+      <div class="why-title">Intervention express</div>
+      <div class="why-text">Nos équipes sont mobilisées 24h/24 et 7j/7, avec un délai d'arrivée moyen de 30 minutes sur Paris.</div>
+    </div>
+    <div class="why-card">
+      <div class="why-num">02</div>
+      <div class="why-title">Devis transparent</div>
+      <div class="why-text">Tarification claire et affichée avant intervention. Aucune mauvaise surprise : devis gratuit et sans engagement systématique.</div>
+    </div>
+    <div class="why-card">
+      <div class="why-num">03</div>
+      <div class="why-title">Plombiers qualifiés</div>
+      <div class="why-text">Tous nos techniciens sont des experts qualifiés et bénéficient d’une formation continue aux nouvelles technologies.</div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="process">
+  <p class="section-label">Notre méthode</p>
+  <h2 class="section-title">Comment ça fonctionne ?</h2>
+
+  <div class="process-steps">
+    <div class="process-step">
+      <div class="step-num">01</div>
+      <div class="step-title">📞 Vous appelez</div>
+      <div class="step-text">Appelez-nous ou remplissez le formulaire. Un conseiller qualifié décroche en moins de 2 minutes.</div>
+      <span class="step-arrow">→</span>
+    </div>
+    <div class="process-step">
+      <div class="step-num">02</div>
+      <div class="step-title">🔍 Diagnostic</div>
+      <div class="step-text">Nous évaluons votre problème par téléphone et vous donnons une fourchette de prix immédiate.</div>
+      <span class="step-arrow">→</span>
+    </div>
+    <div class="process-step">
+      <div class="step-num">03</div>
+      <div class="step-title">🚐 Déplacement</div>
+      <div class="step-text">Un plombier équipé est dépêché chez vous. Suivi en temps réel possible sur demande.</div>
+      <span class="step-arrow">→</span>
+    </div>
+    <div class="process-step">
+      <div class="step-num">04</div>
+      <div class="step-title">✅ Résolution</div>
+      <div class="step-text">Réparation sur place dans la plupart des cas, avec garantie écrite sur l'intervention.</div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <p class="section-label">Avis clients</p>
+  <h2 class="section-title">Ils nous font confiance</h2>
+
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <p class="testi-text">Fuite importante un dimanche soir, intervention en 25 minutes chrono. Le plombier était professionnel, propre et efficace. Problème réglé en une heure. Je recommande vivement !</p>
+      <div class="testi-author">
+        <div class="testi-avatar">ML</div>
+        <div>
+          <div class="testi-name">Marie-Laure D.</div>
+          <div class="testi-loc">Paris 11e</div>
+        </div>
+      </div>
+    </div>
+<div class="testi-card">
+  <div class="stars">★★★★★</div>
+  <p class="testi-text">Installation de ma climatisation réalisée rapidement et proprement. Le technicien a pris le temps d’expliquer le fonctionnement et de vérifier que tout était optimal. Service sérieux et très professionnel.</p>
+  <div class="testi-author">
+    <div class="testi-avatar">JD</div>
+    <div>
+      <div class="testi-name">Julien D.</div>
+      <div class="testi-loc">Saint-Denis</div>
+    </div>
+  </div>
+</div>
+
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <p class="testi-text">Mon chauffe-eau a lâché un vendredi soir. Remplacement complet effectué le lendemain matin avec devis clair. Tarif honnête et travail soigné. Merci !</p>
+      <div class="testi-author">
+        <div class="testi-avatar">TK</div>
+        <div>
+          <div class="testi-name">Thomas K.</div>
+          <div class="testi-loc">Paris 15e</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <p class="testi-text">Canalisation bouchée depuis plusieurs jours que les autres n'arrivaient pas à résoudre. Plombex a réglé le problème en 45 min avec une caméra. Bluffant.</p>
+      <div class="testi-author">
+        <div class="testi-avatar">SC</div>
+        <div>
+          <div class="testi-name">Sophie C.</div>
+          <div class="testi-loc">Paris 7e</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ZONES -->
+<section class="zones" id="zones">
+  <p class="section-label">Zones d'intervention</p>
+  <h2 class="section-title">Toute la région parisienne</h2>
+  <p class="section-desc" style="margin-top: 0.5rem;">Nous intervenons dans les 20 arrondissements de Paris ainsi que dans les communes de la petite et grande couronne.</p>
+
+  <div class="zones-list">
+    <span class="zone-pill">Paris 1er</span>
+    <span class="zone-pill">Paris 2e</span>
+    <span class="zone-pill">Paris 3e</span>
+    <span class="zone-pill">Paris 4e</span>
+    <span class="zone-pill">Paris 5e</span>
+    <span class="zone-pill">Paris 6e</span>
+    <span class="zone-pill">Paris 7e</span>
+    <span class="zone-pill">Paris 8e</span>
+    <span class="zone-pill">Paris 9e</span>
+    <span class="zone-pill">Paris 10e</span>
+    <span class="zone-pill">Paris 11e</span>
+    <span class="zone-pill">Paris 12e</span>
+    <span class="zone-pill">Paris 13e</span>
+    <span class="zone-pill">Paris 14e</span>
+    <span class="zone-pill">Paris 15e</span>
+    <span class="zone-pill">Paris 16e</span>
+    <span class="zone-pill">Paris 17e</span>
+    <span class="zone-pill">Paris 18e</span>
+    <span class="zone-pill">Paris 19e</span>
+    <span class="zone-pill">Paris 20e</span>
+    <span class="zone-pill">Boulogne-Billancourt</span>
+    <span class="zone-pill">Neuilly-sur-Seine</span>
+    <span class="zone-pill">Levallois-Perret</span>
+    <span class="zone-pill">Issy-les-Moulineaux</span>
+    <span class="zone-pill">Vincennes</span>
+    <span class="zone-pill">Saint-Denis</span>
+    <span class="zone-pill">Montreuil</span>
+    <span class="zone-pill">Nanterre</span>
+    <span class="zone-pill">Versailles</span>
+    <span class="zone-pill">Ivry-sur-Seine</span>
+  </div>
+</section>
+
+<!-- DEVIS -->
+<section class="devis-section" id="devis">
+  <div class="devis-inner">
+    <p class="section-label">Devis immédiat</p>
+    <h2 class="section-title">Devis gratuit<br>et sans engagement</h2>
+    <p class="section-desc">Remplissez le formulaire, nous vous rappelons sous 5 minutes avec une estimation précise.</p>
+
+    <!-- MESSAGE SUCCÈS (caché par défaut) -->
+    <div id="success-message" style="display:none; background: rgba(255,255,255,0.06); border: 1.5px solid var(--gold); border-radius: 8px; padding: 2.5rem 2rem; text-align: center; margin-bottom: 1.5rem;">
+      <div style="font-size: 3rem; margin-bottom: 1rem;">✅</div>
+      <h3 style="font-family: 'Playfair Display', serif; font-size: 1.6rem; color: var(--gold); margin-bottom: 0.8rem;">Demande envoyée !</h3>
+      <p style="color: rgba(255,255,255,0.7); font-size: 1rem; line-height: 1.7;">Nous avons bien reçu votre demande de devis.<br>Nous reviendrons vers vous <strong style="color:white;">dans les plus brefs délais.</strong></p>
+      <p style="color: rgba(255,255,255,0.4); font-size: 0.82rem; margin-top: 1rem;">Un email de confirmation a été envoyé à oussemasgpc@gmail.com</p>
+    </div>
+
+    <div class="devis-form" id="devis-form">
+      <input id="f-nom" type="text" placeholder="Prénom et nom *">
+      <input id="f-tel" type="tel" placeholder="Téléphone *">
+      <input id="f-email" type="email" placeholder="Email" class="full">
+      <select id="f-service" class="full">
+        <option value="" disabled selected>Type d'intervention *</option>
+        <option>Fuite d'eau</option>
+        <option>Débouchage</option>
+        <option>Chauffe-eau</option>
+        <option>Installation sanitaire</option>
+        <option>Robinetterie</option>
+        <option>Canalisations</option>
+        <option>Climatisation</option>
+        <option>Ventilation</option>
+        <option>Chauffage central</option>
+        <option>Détection de fuite</option>
+        <option disabled>── Électricité ──</option>
+        <option>Dépannage électrique</option>
+        <option>Tableau électrique</option>
+        <option>Mise aux normes électriques</option>
+        <option>Installation prise / interrupteur</option>
+        <option>Éclairage & domotique</option>
+        <option>Autre</option>
+      </select>
+      <input id="f-adresse" type="text" placeholder="Adresse / Arrondissement *" class="full">
+      <textarea id="f-message" class="full" placeholder="Décrivez votre problème (optionnel)..."></textarea>
+      <button class="devis-submit full" id="btn-submit" onclick="envoyerDevis()">
+        Envoyer ma demande de devis →
+      </button>
+      <p id="form-error" style="display:none; color:#ff6b6b; font-size:0.85rem; text-align:center; grid-column:1/-1;">
+        ⚠️ Veuillez remplir au moins votre nom et téléphone.
+      </p>
+    </div>
+
+    <div class="garanties">
+      <span class="garantie-item">
+        <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+        Devis 100% gratuit
+      </span>
+      <span class="garantie-item">
+        <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+        Sans engagement
+      </span>
+      <span class="garantie-item">
+        <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+        Rappel sous 5 minutes
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">PLOMB<span>EX</span></div>
+      <div class="footer-tagline">Plombier professionnel à Paris — 24h/7j</div>
+      <br>
+      <div style="font-size: 0.85rem;">
+        📞 <a href="tel:06 44 04 42 70" style="color: var(--gold); text-decoration: none;">06 44 04 42 70</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#services">Fuite d'eau</a></li>
+        <li><a href="#services">Débouchage</a></li>
+        <li><a href="#services">Chauffe-eau</a></li>
+        <li><a href="#services">Climatisation</a></li>
+        <li><a href="#services">Installation sanitaire</a></li>
+        <li><a href="#services">Détection de fuite</a></li>
+        <li><a href="#services">Électricité</a></li>
+        <li><a href="#services">Tableau électrique</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Informations</h4>
+      <ul>
+        <li><a href="#">Qui sommes-nous</a></li>
+        <li><a href="#zones">Zones d'intervention</a></li>
+        <li><a href="#devis">Devis gratuit</a></li>
+        <li><a href="#">Mentions légales</a></li>
+        <li><a href="#">Politique de confidentialité</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 PLOMBEX — Tous droits réservés</span>
+    <span>Paris &amp; Île-de-France</span>
+  </div>
+</footer>
+
+<!-- FLOATING CTA -->
+<a href="tel:06 44 04 42 70" class="float-phone">
+  <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+  Urgence — 06 44 04 42 70
+</a>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+  /* ── EmailJS init ── */
+  emailjs.init("a4a5hUydqJ4nTzLns");
+
+  /* ── Smooth scroll ── */
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
+  });
+
+  /* ── Envoi formulaire ── */
+  function envoyerDevis() {
+    const nom     = document.getElementById('f-nom').value.trim();
+    const tel     = document.getElementById('f-tel').value.trim();
+    const email   = document.getElementById('f-email').value.trim();
+    const service = document.getElementById('f-service').value;
+    const adresse = document.getElementById('f-adresse').value.trim();
+    const message = document.getElementById('f-message').value.trim();
+    const erreur  = document.getElementById('form-error');
+    const btn     = document.getElementById('btn-submit');
+
+    // Validation simple
+    if (!nom || !tel) {
+      erreur.style.display = 'block';
+      return;
+    }
+    erreur.style.display = 'none';
+
+    // Bouton chargement
+    btn.textContent = 'Envoi en cours...';
+    btn.disabled = true;
+    btn.style.opacity = '0.7';
+
+    // Paramètres envoyés dans l'email
+    const params = {
+      to_email:  'oussemasgpc@gmail.com',
+      from_name: nom,
+      telephone: tel,
+      email:     email || 'Non renseigné',
+      service:   service || 'Non précisé',
+      adresse:   adresse || 'Non renseignée',
+      message:   message || 'Aucun message',
+    };
+
+    emailjs.send("service_062n39d", "template_5bhsfeq", params)
+      .then(() => {
+        // Succès : cacher le formulaire, afficher le message
+        document.getElementById('devis-form').style.display = 'none';
+        document.getElementById('success-message').style.display = 'block';
+        document.getElementById('success-message').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      })
+      .catch(() => {
+        // Erreur réseau ou config
+        btn.textContent = 'Envoyer ma demande de devis →';
+        btn.disabled = false;
+        btn.style.opacity = '1';
+        erreur.textContent = '❌ Erreur d\'envoi. Essayez de nous appeler directement.';
+        erreur.style.display = 'block';
+      });
+  }
+</script>
+<!-- POPUP TÉLÉPHONE -->
+<div id="popup-tel" onclick="if(event.target===this)this.style.display='none'" style="
+  display:none; position:fixed; inset:0; z-index:9999;
+  background:rgba(0,0,0,0.6); backdrop-filter:blur(4px);
+  align-items:center; justify-content:center;">
+  <div style="
+    background:var(--navy); border:2px solid var(--gold);
+    border-radius:12px; padding:2.5rem 2rem; max-width:380px; width:90%;
+    text-align:center; position:relative; animation:popIn .25s ease;">
+    <!-- Fermer -->
+    <button onclick="document.getElementById('popup-tel').style.display='none'" style="
+      position:absolute; top:12px; right:14px;
+      background:none; border:none; color:rgba(255,255,255,0.4);
+      font-size:1.4rem; cursor:pointer; line-height:1;">✕</button>
+    <!-- Icône -->
+    <div style="
+      width:64px; height:64px; background:var(--gold); border-radius:50%;
+      display:flex; align-items:center; justify-content:center;
+      margin:0 auto 1.2rem; animation:ring 1.5s ease-in-out infinite;">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="#0a1628">
+        <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/>
+      </svg>
+    </div>
+    <p style="color:rgba(255,255,255,0.5); font-size:0.8rem; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:0.5rem;">Appelez-nous maintenant</p>
+    <a href="tel:0644044270" style="
+      display:block; font-family:'Playfair Display',serif;
+      font-size:2rem; font-weight:700; color:var(--gold);
+      text-decoration:none; letter-spacing:-0.02em; margin-bottom:0.4rem;">
+      06 44 04 42 70
+    </a>
+    <p style="color:rgba(255,255,255,0.4); font-size:0.82rem; margin-bottom:1.5rem;">Disponible 24h/7j — Intervention en 30 min</p>
+    <a href="tel:0644044270" style="
+      display:block; background:var(--gold); color:var(--navy);
+      font-weight:700; font-size:1rem; padding:0.9rem 1.5rem;
+      border-radius:6px; text-decoration:none; transition:background .2s;">
+      📞 &nbsp;Appeler maintenant
+    </a>
+  </div>
+</div>
+
+<style>
+@keyframes popIn {
+  from { opacity:0; transform:scale(0.88); }
+  to   { opacity:1; transform:scale(1); }
+}
+</style>
+
+</body>
+</html>
